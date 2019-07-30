@@ -1,0 +1,20 @@
+{
+  "name": "test_app_1",
+  "homepage": "",
+  "authors": [
+    ""
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}
