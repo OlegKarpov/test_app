@@ -72,6 +72,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_SIGNUP_FORM_CLASS = 'apps.users.forms.CustomSignupForm'
 ACCOUNT_FORMS = {'login': 'apps.users.forms.CustomSignInForm'}
+ACCOUNT_LOGOUT_ON_GET = True
 
 
 MIDDLEWARE = [
