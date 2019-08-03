@@ -19,14 +19,15 @@ from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
+
+from test_app_1.views import IndexView
 
 urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^users/', include('apps.users.urls')),
     path('admin/', admin.site.urls),
 
-    path('', login_required(TemplateView.as_view(template_name='index.html')), name='index'),
+    path('', login_required(IndexView.as_view(template_name='index.html')), name='index'),
 ]
 
 if settings.DEBUG:

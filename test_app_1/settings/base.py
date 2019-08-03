@@ -65,14 +65,14 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-LOGIN_REDIRECT_URL = '/'
-
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_SIGNUP_FORM_CLASS = 'apps.users.forms.CustomSignupForm'
+ACCOUNT_FORMS = {'login': 'apps.users.forms.CustomSignInForm'}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -184,5 +184,3 @@ COMPRESS_PRECOMPILERS = (
     # ('text/x-scss', 'django_pyscss.compressor.DjangoScssFilter'),
     # ('text/x-scss', 'sass --style compressed {infile} {outfile}'),
 )
-
-ACCOUNT_FORMS = {'login': 'apps.users.forms.CustomSignInForm'}

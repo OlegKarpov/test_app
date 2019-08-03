@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
 from django.views.generic.detail import SingleObjectMixin, DetailView
 from django.utils.decorators import method_decorator
 
@@ -33,10 +34,6 @@ class ProfileUpdateView(LoginRequiredMixin, DetailView):
     template_name = 'user_detail.html'
     slug_field = "first_name"
     model = User
-    """
-    A view that displays a form for editing a user's profile.
 
-    Uses a form dynamically created for the `Profile` model and
-    the default model's update template.
-    """
-    pass  # That's All Folks!
+    def get_success_url(self):
+        return reverse('user_page', args=[self.request.user.username])

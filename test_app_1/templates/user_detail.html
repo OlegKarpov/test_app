@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body_class %}index{% endblock %}
+
+{% block content %}
+    Username: {{ user.username }}
+
+    User Full name: {{ user.get_full_name }}
+
+    User Group: {{ user.groups.all.0 }}
+
+    Email: {{ user.email }}
+
+    Session Started at: {{ user.last_login }}
+      <p><a href="{% url 'account_logout' %}">logout</a></p>
+
+{% endblock %}
