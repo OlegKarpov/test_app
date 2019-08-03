@@ -184,3 +184,5 @@ COMPRESS_PRECOMPILERS = (
     # ('text/x-scss', 'django_pyscss.compressor.DjangoScssFilter'),
     # ('text/x-scss', 'sass --style compressed {infile} {outfile}'),
 )
+
+ACCOUNT_FORMS = {'login': 'apps.users.forms.CustomSignInForm'}

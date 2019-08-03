@@ -23,6 +23,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^users/', include('apps.users.urls')),
     path('admin/', admin.site.urls),
 
     path('', login_required(TemplateView.as_view(template_name='index.html')), name='index'),

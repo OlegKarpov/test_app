@@ -1,3 +1,4 @@
+from allauth.account.forms import LoginForm
 from django.contrib.auth import get_user_model
 from django.forms import ModelForm
 
@@ -13,3 +14,9 @@ class CustomSignupForm(ModelForm):
         model = get_user_model()
         fields = ('email', 'first_name', 'last_name',)
 
+
+class CustomSignInForm(LoginForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'form-control'
