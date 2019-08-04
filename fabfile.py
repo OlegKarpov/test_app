@@ -1,21 +1,17 @@
 import os
-import getpass
-import datetime
+
+from django.contrib.auth import get_user_model
+from fabric.context_managers import cd
 from fabric.contrib import django
-from fabric.context_managers import hide, cd
-from fabric.operations import local, prompt, env, run, sudo
-from fabric.decorators import task, roles
+from fabric.decorators import task
+from fabric.operations import env, local, run
 from fabric.utils import puts
-from fabric.tasks import execute
-from fabric.colors import green, cyan
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 django.settings_module('test_app_1.settings')
 
-import django
 django.setup()
 
-from django.contrib.auth import get_user_model
 
 ADMIN_EMAIL_ADDRESS = 'admin@example.com'
 

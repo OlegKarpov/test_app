@@ -1,8 +1,10 @@
 from copy import deepcopy
+
+from custom_user.admin import EmailUserAdmin
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from custom_user.admin import EmailUserAdmin
 from sorl.thumbnail.admin import AdminImageMixin
+
 from apps.users.models import User
 
 
@@ -16,5 +18,6 @@ class UserAdmin(AdminImageMixin, EmailUserAdmin):
                                      {'fields': ('first_name', 'last_name')}))
 
         return tuple(fieldset_extended)
+
 
 admin.site.register(User, UserAdmin)

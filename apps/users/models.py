@@ -1,6 +1,6 @@
+from custom_user.models import AbstractEmailUser
 from django.db import models
 from django.utils.translation import ugettext as _
-from custom_user.models import AbstractEmailUser
 
 
 class User(AbstractEmailUser):
