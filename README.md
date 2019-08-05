@@ -14,8 +14,12 @@
     ```
     pipenv install --three
     ```
-
-3. Install dependencies and initial data:
+    
+3. Copy the file at *{{ project_name }}/settings/local.example.py* and save it in the same directory under the name of *"local.py"*:
+    ```
+    cp {{ project_name }}/settings/local.example.py {{ project_name }}/settings/local.py
+    
+4. Install dependencies and initial data:
     In the terminal
     ```
     pipenv run fab initial_data
